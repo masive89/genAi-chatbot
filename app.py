@@ -4,13 +4,13 @@ from vertexai.language_models import ChatModel
 import os
 
 app = Flask(__name__)
-PROJECT_ID = "tt-dev-001"  
+PROJECT_ID = "kamm-workbench"  
 LOCATION = "us-central1"  
 
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 def create_session():
-    chat_model = ChatModel.from_pretrained("chat-bison@001")
+    chat_model = ChatModel.from_pretrained("text-bison")
     chat = chat_model.start_chat()
     return chat
 
