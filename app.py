@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import vertexai
-from vertexai.language_models import ChatModel
+from vertexai.language_models import TextGenerationModel
 import os
 
 app = Flask(__name__)
