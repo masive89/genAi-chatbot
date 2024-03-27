@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import vertexai
-from vertexai.language_models import TextGenerationModel
+from vertexai.language_models import ChatModel
 import os
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ LOCATION = "us-central1"
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 def create_session():
-    chat_model = TextGenerationModel.from_pretrained("text-bison@002")
+    chat_model = ChatModel.from_pretrained("chat-bison")
     chat = chat_model.start_chat()
     return chat
 
